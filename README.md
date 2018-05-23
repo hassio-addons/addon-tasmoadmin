@@ -248,7 +248,7 @@ SOFTWARE.
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-sonweb/54155?u=frenck
 [frenck]: https://github.com/frenck
 [gitlabci-shield]: https://gitlab.com/hassio-addons/addon-sonweb/badges/master/pipeline.svg
 [gitlabci]: https://gitlab.com/hassio-addons/addon-sonweb/pipelines
@@ -264,7 +264,7 @@ SOFTWARE.
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
 [license-shield]: https://img.shields.io/github/license/hassio-addons/addon-sonweb.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-concept-red.svg
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [reddit]: https://reddit.com/r/homeassistant
 [releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-sonweb.svg
 [releases]: https://github.com/hassio-addons/addon-sonweb/releases
