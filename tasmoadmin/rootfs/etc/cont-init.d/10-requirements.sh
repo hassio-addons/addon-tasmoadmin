@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
 # This files check if all user configuration requirements are met
 # ==============================================================================
 # shellcheck disable=SC1091

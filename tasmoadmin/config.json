@@ -1,9 +1,9 @@
 {
-  "name": "SonWEB",
+  "name": "TasmoAdmin",
   "version": "dev",
   "slug": "sonweb",
   "description": "Centrally manage all your Sonoff-Tasmota devices",
-  "url": "https://community.home-assistant.io/t/community-hass-io-add-on-sonweb/54155?u=frenck",
+  "url": "https://community.home-assistant.io/t/community-hass-io-add-on-tasmoadmin/54155?u=frenck",
   "webui": "[PROTO:ssl]://[HOST]:[PORT:9541]",
   "startup": "system",
   "arch": [

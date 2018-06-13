@@ -1,23 +1,23 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
 # Ensures data is store in a persistent location
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
 
-if ! hass.directory_exists "/data/sonweb"; then
+if ! hass.directory_exists "/data/tasmoadmin"; then
     hass.log.debug 'Data directory not initialized, doing that now...'
 
     # Setup structure
-    cp -R /var/www/sonweb/data /data/sonweb
+    cp -R /var/www/tasmoadmin/data /data/tasmoadmin
 
     # Ensure file permissions
-    chown -R nginx:nginx /data/sonweb
-    find /data/sonweb -not -perm 0644 -type f -exec chmod 0644 {} \;
-    find /data/sonweb -not -perm 0755 -type d -exec chmod 0755 {} \;
+    chown -R nginx:nginx /data/tasmoadmin
+    find /data/tasmoadmin -not -perm 0644 -type f -exec chmod 0644 {} \;
+    find /data/tasmoadmin -not -perm 0755 -type d -exec chmod 0755 {} \;
 fi
 
 hass.log.debug 'Symlinking data directory to persistent storage location...'
-rm -f -r /var/www/sonweb/data
-ln -s /data/sonweb /var/www/sonweb/data
+rm -f -r /var/www/tasmoadmin/data
+ln -s /data/tasmoadmin /var/www/tasmoadmin/data

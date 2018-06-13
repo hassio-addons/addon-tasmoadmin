@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SonWEB
-# Configures NGINX for use with SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
+# Configures NGINX for use with TasmoAdmin
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh

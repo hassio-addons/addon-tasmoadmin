@@ -19,16 +19,16 @@ RUN \
         git=2.15.0-r1 \
     \
     && git clone --branch master --single-branch \
-        https://github.com/reloxx13/SonWEB.git /var/www/sonweb \
-    && git -C /var/www/sonweb checkout 74704ba33f7b4df0d5fd75c55253356edbb65029 \
+        https://github.com/reloxx13/TasmoAdmin.git /var/www/tasmoadmin \
+    && git -C /var/www/tasmoadmin checkout 74704ba33f7b4df0d5fd75c55253356edbb65029 \
     \
     && apk del --purge .build-dependencies \
     \
-    && rm -f -r /var/www/sonweb/.git \
-    && find /var/www/sonweb -type f -name ".htaccess" -depth -exec rm -f {} \; \
-    && find /var/www/sonweb -type f -name "*.md" -depth -exec rm -f {} \; \
-    && find /var/www/sonweb -type f -name ".gitignore" -depth -exec rm -f {} \; \
-    && find /var/www/sonweb -type f -name ".empty" -depth -exec rm -f {} \;
+    && rm -f -r /var/www/tasmoadmin/.git \
+    && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
+    && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
+    && find /var/www/tasmoadmin -type f -name ".gitignore" -depth -exec rm -f {} \; \
+    && find /var/www/tasmoadmin -type f -name ".empty" -depth -exec rm -f {} \;
 
 # Copy root filesystem
 COPY rootfs /
@@ -41,7 +41,7 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="SonWEB" \
+    io.hass.name="TasmoAdmin" \
     io.hass.description="Centrally manage all your Sonoff-Tasmota devices" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
@@ -49,10 +49,10 @@ LABEL \
     maintainer="Franck Nijhof <frenck@addons.community>" \
     org.label-schema.description="Centrally manage all your Sonoff-Tasmota devices" \
     org.label-schema.build-date=${BUILD_DATE} \
-    org.label-schema.name="SonWEB" \
+    org.label-schema.name="TasmoAdmin" \
     org.label-schema.schema-version="1.0" \
-    org.label-schema.url="https://community.home-assistant.io/t/community-hass-io-add-on-sonweb/54155?u=frenck" \
-    org.label-schema.usage="https://github.com/hassio-addons/addon-sonweb/tree/master/README.md" \
+    org.label-schema.url="https://community.home-assistant.io/t/community-hass-io-add-on-tasmoadmin/54155?u=frenck" \
+    org.label-schema.usage="https://github.com/hassio-addons/addon-tasmoadmin/tree/master/README.md" \
     org.label-schema.vcs-ref=${BUILD_REF} \
-    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-sonweb" \
+    org.label-schema.vcs-url="https://github.com/hassio-addons/addon-tasmoadmin" \
     org.label-schema.vendor="Community Hass.io Addons"
