@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
 # Runs the PHP-FPM daemon
 # ==============================================================================
 # shellcheck disable=SC1091

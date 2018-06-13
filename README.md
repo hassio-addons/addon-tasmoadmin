@@ -1,4 +1,4 @@
-# Community Hass.io Add-ons: SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -16,12 +16,13 @@
 
 Centrally manage all your Sonoff-Tasmota devices.
 
-![SonWEB screenshot](images/screenshot.png)
+![TasmoAdmin screenshot](images/screenshot.png)
 
 ## About
 
-SonWEB is an administrative web interface to manage all your Sonoff-Tasmota
-flashed devices centrally. Some of its features:
+TasmoAdmin (formerly known as SonWEB) is an administrative web interface to
+manage all your Sonoff-Tasmota flashed devices centrally.
+Some of its features:
 
 - Scans your networks and adds your devices automatically
 - See the status off all your devices quick and easy
@@ -35,9 +36,9 @@ The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
 1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
-1. Install the "SonWEB" add-on.
-1. Start the "SonWEB" add-on.
-1. Check the logs of the “SonWEB” add-on to see if everything went well.
+1. Install the "TasmoAdmin" add-on.
+1. Start the "TasmoAdmin" add-on.
+1. Check the logs of the “TasmoAdmin” add-on to see if everything went well.
 
 **NOTE**: Do not add this repository to Hass.io, please use:
 `https://github.com/hassio-addons/repository`.
@@ -102,7 +103,7 @@ you are troubleshooting.
 
 ### Option: `ssl`
 
-Enables/Disables SSL (HTTPS) on the web interface of SonWEB
+Enables/Disables SSL (HTTPS) on the web interface of TasmoAdmin
 Panel. Set it `true` to enable it, `false` otherwise.
 
 ### Option: `certfile`
@@ -123,7 +124,7 @@ Set this option too `false` to disable IPv6 support.
 
 ## Embedding into Home Assistant
 
-It is possible to embed the SonWEB interface directly into Home Assistant,
+It is possible to embed the TasmoAdmin interface directly into Home Assistant,
 allowing you to access it through the Home Assistant frontend.
 
 Home Assistant provides the `panel_iframe` component, for these purposes.
@@ -132,8 +133,8 @@ Example configuration:
 
 ```yaml
 panel_iframe:
-  sonweb:
-    title: SonWEB
+  tasmoadmin:
+    title: TasmoAdmin
     icon: mdi:lightbulb-on
     url: http://addres.to.your.hass.io:9541
 ```
@@ -215,58 +216,58 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 [aarch64-anchore-shield]: https://anchore.io/service/badges/image/db1960b51d33fe80c8a6f3318f327532c3a7f1f501c767dfa3d9202196982e2f
-[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fsonweb-aarch64%3Alatest
+[aarch64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Ftasmoadmin-aarch64%3Alatest
 [aarch64-arch-shield]: https://img.shields.io/badge/architecture-aarch64-blue.svg
-[aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/sonweb-aarch64
-[aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/sonweb-aarch64.svg
-[aarch64-microbadger]: https://microbadger.com/images/hassioaddons/sonweb-aarch64
-[aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/sonweb-aarch64.svg
-[aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/sonweb-aarch64.svg
+[aarch64-dockerhub]: https://hub.docker.com/r/hassioaddons/tasmoadmin-aarch64
+[aarch64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/tasmoadmin-aarch64.svg
+[aarch64-microbadger]: https://microbadger.com/images/hassioaddons/tasmoadmin-aarch64
+[aarch64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/tasmoadmin-aarch64.svg
+[aarch64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/tasmoadmin-aarch64.svg
 [amd64-anchore-shield]: https://anchore.io/service/badges/image/67ef5b927a8e861eee9e576477f4f6f1e52ccc30c657e906720a8fa3a9fe5fc7
-[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fsonweb-amd64%3Alatest
+[amd64-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Ftasmoadmin-amd64%3Alatest
 [amd64-arch-shield]: https://img.shields.io/badge/architecture-amd64-blue.svg
-[amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/sonweb-amd64
-[amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/sonweb-amd64.svg
-[amd64-microbadger]: https://microbadger.com/images/hassioaddons/sonweb-amd64
-[amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/sonweb-amd64.svg
-[amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/sonweb-amd64.svg
+[amd64-dockerhub]: https://hub.docker.com/r/hassioaddons/tasmoadmin-amd64
+[amd64-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/tasmoadmin-amd64.svg
+[amd64-microbadger]: https://microbadger.com/images/hassioaddons/tasmoadmin-amd64
+[amd64-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/tasmoadmin-amd64.svg
+[amd64-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/tasmoadmin-amd64.svg
 [armhf-anchore-shield]: https://anchore.io/service/badges/image/f2968fbefd4a99acfd25c100c099fcc1a5ae486289ca5b3548efde4c02583cc4
-[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fsonweb-armhf%3Alatest
+[armhf-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Ftasmoadmin-armhf%3Alatest
 [armhf-arch-shield]: https://img.shields.io/badge/architecture-armhf-blue.svg
-[armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/sonweb-armhf
-[armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/sonweb-armhf.svg
-[armhf-microbadger]: https://microbadger.com/images/hassioaddons/sonweb-armhf
-[armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/sonweb-armhf.svg
-[armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/sonweb-armhf.svg
+[armhf-dockerhub]: https://hub.docker.com/r/hassioaddons/tasmoadmin-armhf
+[armhf-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/tasmoadmin-armhf.svg
+[armhf-microbadger]: https://microbadger.com/images/hassioaddons/tasmoadmin-armhf
+[armhf-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/tasmoadmin-armhf.svg
+[armhf-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/tasmoadmin-armhf.svg
 [bountysource-shield]: https://img.shields.io/bountysource/team/hassio-addons/activity.svg
 [bountysource]: https://www.bountysource.com/teams/hassio-addons/issues
 [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/guidelines/download-assets-sm-2.svg
 [buymeacoffee]: https://www.buymeacoffee.com/frenck
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-sonweb.svg
-[commits]: https://github.com/hassio-addons/addon-sonweb/commits/master
-[contributors]: https://github.com/hassio-addons/addon-sonweb/graphs/contributors
+[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-tasmoadmin.svg
+[commits]: https://github.com/hassio-addons/addon-tasmoadmin/commits/master
+[contributors]: https://github.com/hassio-addons/addon-tasmoadmin/graphs/contributors
 [discord-shield]: https://img.shields.io/discord/330944238910963714.svg
 [discord]: https://discord.gg/c5DvZ4e
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
-[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-sonweb/54155?u=frenck
+[forum]: https://community.home-assistant.io/t/community-hass-io-add-on-tasmoadmin/54155?u=frenck
 [frenck]: https://github.com/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-sonweb/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-sonweb/pipelines
+[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-tasmoadmin/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/hassio-addons/addon-tasmoadmin/pipelines
 [i386-anchore-shield]: https://anchore.io/service/badges/image/bfa0ec04d5a8519ccfaf3be75bcd92bd1d9821946e39368d2b88d7d14d16e58e
-[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Fsonweb-i386%3Alatest
+[i386-anchore]: https://anchore.io/image/dockerhub/hassioaddons%2Ftasmoadmin-i386%3Alatest
 [i386-arch-shield]: https://img.shields.io/badge/architecture-i386-blue.svg
-[i386-dockerhub]: https://hub.docker.com/r/hassioaddons/sonweb-i386
-[i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/sonweb-i386.svg
-[i386-microbadger]: https://microbadger.com/images/hassioaddons/sonweb-i386
-[i386-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/sonweb-i386.svg
-[i386-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/sonweb-i386.svg
-[issue]: https://github.com/hassio-addons/addon-sonweb/issues
+[i386-dockerhub]: https://hub.docker.com/r/hassioaddons/tasmoadmin-i386
+[i386-layers-shield]: https://images.microbadger.com/badges/image/hassioaddons/tasmoadmin-i386.svg
+[i386-microbadger]: https://microbadger.com/images/hassioaddons/tasmoadmin-i386
+[i386-pulls-shield]: https://img.shields.io/docker/pulls/hassioaddons/tasmoadmin-i386.svg
+[i386-version-shield]: https://images.microbadger.com/badges/version/hassioaddons/tasmoadmin-i386.svg
+[issue]: https://github.com/hassio-addons/addon-tasmoadmin/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-sonweb.svg
+[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-tasmoadmin.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2018.svg
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-experimental-yellow.svg
 [reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-sonweb.svg
-[releases]: https://github.com/hassio-addons/addon-sonweb/releases
+[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-tasmoadmin.svg
+[releases]: https://github.com/hassio-addons/addon-tasmoadmin/releases
 [repository]: https://github.com/hassio-addons/repository
 [semver]: http://semver.org/spec/v2.0.0.html

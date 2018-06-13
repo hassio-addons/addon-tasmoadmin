@@ -2,9 +2,9 @@
 image: docker:stable
 
 variables:
-  ADDON_GITHUB_REPO: hassio-addons/addon-sonweb
-  ADDON_SLUG: sonweb
-  ADDON_TARGET: sonweb
+  ADDON_GITHUB_REPO: hassio-addons/addon-tasmoadmin
+  ADDON_SLUG: tasmoadmin
+  ADDON_TARGET: tasmoadmin
   DOCKER_DRIVER: overlay2
   DOCKER_HUB_ORG: hassioaddons
 

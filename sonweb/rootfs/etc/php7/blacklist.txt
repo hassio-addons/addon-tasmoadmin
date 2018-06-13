@@ -1,2 +1,0 @@
-/data/sonweb/*
-/var/www/sonweb/data/*

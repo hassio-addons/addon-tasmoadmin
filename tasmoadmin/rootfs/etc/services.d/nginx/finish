@@ -1,6 +1,6 @@
 #!/usr/bin/execlineb -S0
 # ==============================================================================
-# Community Hass.io Add-ons: SonWEB
+# Community Hass.io Add-ons: TasmoAdmin
 # Take down the S6 supervision tree when Nginx fails
 # ==============================================================================
 if -n { s6-test $# -ne 0 }
