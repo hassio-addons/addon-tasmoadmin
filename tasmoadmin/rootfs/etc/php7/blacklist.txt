@@ -1,2 +1,2 @@
 /data/tasmoadmin/*
-/var/www/tasmoadmin/data/*
+/var/www/tasmoadmin/tasmoadmin/data/*
