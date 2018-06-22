@@ -7,7 +7,7 @@
 source /usr/lib/hassio-addons/base.sh
 
 if hass.directory_exists "/data/sonweb"; then
-    hass.log.inf 'Migrating data from sonweb to tasmoadmin...'
+    hass.log.info 'Migrating data from sonweb to tasmoadmin...'
 
     # Rename data folder
     mv /data/sonweb /data/tasmoadmin
