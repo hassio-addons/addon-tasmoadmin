@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.12.2-r3 \
+        nginx=1.14.0-r0 \
         php7-curl=7.1.17-r0 \
         php7-fpm=7.1.17-r0 \
         php7-json=7.1.17-r0 \
