@@ -6,13 +6,13 @@ FROM ${BUILD_FROM}
 RUN \
     apk add --no-cache \
         nginx=1.14.0-r0 \
-        php7-curl=7.1.17-r0 \
-        php7-fpm=7.1.17-r0 \
-        php7-json=7.1.17-r0 \
-        php7-opcache=7.1.17-r0 \
-        php7-session=7.1.17-r0 \
-        php7-zip=7.1.17-r0 \
-        php7=7.1.17-r0 \
+        php7-curl=7.2.7-r0 \
+        php7-fpm=7.2.7-r0 \
+        php7-json=7.2.7-r0 \
+        php7-opcache=7.2.7-r0 \
+        php7-session=7.2.7-r0 \
+        php7-zip=7.2.7-r0 \
+        php7=7.2.7-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.15.2-r0 \
