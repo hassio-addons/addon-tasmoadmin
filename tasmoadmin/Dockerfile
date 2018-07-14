@@ -15,7 +15,7 @@ RUN \
         php7=7.2.7-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.15.2-r0 \
+        git=2.18.0-r0 \
     \
     && git clone --branch v1.3.1 --depth=1 \
         https://github.com/reloxx13/TasmoAdmin.git /var/www/tasmoadmin \
