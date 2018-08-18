@@ -22,7 +22,7 @@
   },
   "options": {
     "log_level": "info",
-    "ssl": false,
+    "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
     "ipv6": false
