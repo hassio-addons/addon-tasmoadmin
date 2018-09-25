@@ -9,13 +9,13 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.14.0-r1 \
-        php7-curl=7.2.8-r1 \
-        php7-fpm=7.2.8-r1 \
-        php7-json=7.2.8-r1 \
-        php7-opcache=7.2.8-r1 \
-        php7-session=7.2.8-r1 \
-        php7-zip=7.2.8-r1 \
-        php7=7.2.8-r1 \
+        php7-curl=7.2.10-r0 \
+        php7-fpm=7.2.10-r0 \
+        php7-json=7.2.10-r0 \
+        php7-opcache=7.2.10-r0 \
+        php7-session=7.2.10-r0 \
+        php7-zip=7.2.10-r0 \
+        php7=7.2.10-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.18.0-r0 \
