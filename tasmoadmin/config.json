@@ -14,7 +14,7 @@
   ],
   "boot": "auto",
   "hassio_api": true,
-  "hassio_rolle": "default",
+  "hassio_role": "default",
   "map": [
     "ssl"
   ],
