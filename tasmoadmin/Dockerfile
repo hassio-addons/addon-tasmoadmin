@@ -8,7 +8,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.14.1-r0 \
+        nginx=1.14.2-r0 \
         php7-curl=7.2.10-r0 \
         php7-fpm=7.2.10-r0 \
         php7-json=7.2.10-r0 \
