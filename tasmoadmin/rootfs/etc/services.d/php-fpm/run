@@ -3,4 +3,5 @@
 # Community Hass.io Add-ons: TasmoAdmin
 # Runs the PHP-FPM daemon
 # ==============================================================================
+bashio::log.info "Starting PHP-FPM server..."
 exec php-fpm7 --nodaemonize

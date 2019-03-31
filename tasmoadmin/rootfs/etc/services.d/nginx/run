@@ -10,4 +10,5 @@ timeout 15 \
         'until echo > /dev/tcp/localhost/9001 ; do sleep 0.5; done' \
             > /dev/null 2>&1
 
+bashio::log.info "Starting NGinx server..."
 exec nginx -g "daemon off;"
