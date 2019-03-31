@@ -23,14 +23,13 @@
     "9541/tcp": 9541
   },
   "options": {
-    "log_level": "info",
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem",
     "ipv6": false
   },
   "schema": {
-    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)",
+    "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssl": "bool",
     "certfile": "str",
     "keyfile": "str",
