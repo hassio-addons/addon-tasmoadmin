@@ -31,9 +31,6 @@
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssl": "bool",
     "certfile": "str",
-  },
-  "environment": {
-    "LOG_FORMAT": "{LEVEL}: {MESSAGE}"
     "keyfile": "str"
   }
 }
