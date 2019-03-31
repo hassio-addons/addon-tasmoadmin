@@ -1,13 +1,10 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: TasmoAdmin
 # Migrates data from sonweb to TasmoAdmin
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-if hass.directory_exists "/data/sonweb"; then
-    hass.log.info 'Migrating data from sonweb to tasmoadmin...'
+if bashio::fs.directory_exists "/data/sonweb"; then
+    bashio::log.info 'Migrating data from sonweb to tasmoadmin...'
 
     # Rename data folder
     mv /data/sonweb /data/tasmoadmin

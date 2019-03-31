@@ -1,13 +1,10 @@
-#!/usr/bin/with-contenv bash
+#!/usr/bin/with-contenv bashio
 # ==============================================================================
 # Community Hass.io Add-ons: TasmoAdmin
 # Ensures data is store in a persistent location
 # ==============================================================================
-# shellcheck disable=SC1091
-source /usr/lib/hassio-addons/base.sh
-
-if ! hass.directory_exists "/data/tasmoadmin"; then
-    hass.log.debug 'Data directory not initialized, doing that now...'
+if ! bashio::fs.directory_exists "/data/tasmoadmin"; then
+    bashio::log.debug 'Data directory not initialized, doing that now...'
 
     # Setup structure
     cp -R /var/www/tasmoadmin/tasmoadmin/data /data/tasmoadmin
@@ -18,6 +15,6 @@ if ! hass.directory_exists "/data/tasmoadmin"; then
     find /data/tasmoadmin -not -perm 0755 -type d -exec chmod 0755 {} \;
 fi
 
-hass.log.debug 'Symlinking data directory to persistent storage location...'
+bashio::log.debug 'Symlinking data directory to persistent storage location...'
 rm -f -r /var/www/tasmoadmin/tasmoadmin/data
 ln -s /data/tasmoadmin /var/www/tasmoadmin/tasmoadmin/data
