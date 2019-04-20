@@ -22,6 +22,9 @@
   "ports": {
     "9541/tcp": 9541
   },
+  "ports_description": {
+    "9541/tcp": "TasmoAdmin web interface"
+  },
   "options": {
     "ssl": true,
     "certfile": "fullchain.pem",
