@@ -32,7 +32,7 @@ manage all your Sonoff-Tasmota flashed devices centrally.
 Some of its features:
 
 - Scans your networks and adds your devices automatically
-- See the status off all your devices quick and easy
+- See the status of all your devices quick and easy
 - Configure all your devices from a single place
 - Send out firmware updates over the air to one or more your devices at once
 - Can automatically download the latest firmware for you
