@@ -42,13 +42,10 @@ Some of its features:
 The installation of this add-on is pretty straightforward and not different in
 comparison to installing any other Hass.io add-on.
 
-1. [Add our Hass.io add-ons repository][repository] to your Hass.io instance.
+1. Search for the "TasmoAdmin" add-on in the Hass.io add-on store.
 1. Install the "TasmoAdmin" add-on.
 1. Start the "TasmoAdmin" add-on.
 1. Check the logs of the “TasmoAdmin” add-on to see if everything went well.
-
-**NOTE**: Do not add this repository to Hass.io, please use:
-`https://github.com/hassio-addons/repository`.
 
 ## Configuration
 
