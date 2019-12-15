@@ -1,0 +1,47 @@
+server {
+    allow   172.30.32.2;
+    allow   127.0.0.1;
+    deny    all;
+    server_name hassio.local;
+    listen 8099 default_server;
+    root /var/www/ingress/;
+    index index.php;
+    location %%ingress_entry%%/ {
+
+        location %%ingress_entry%%/data/firmwares {
+        }
+
+        location ^~ %%ingress_entry%%/data/ {
+            deny all;
+        }
+
+        location ~ .php$ {
+            fastcgi_pass 127.0.0.1:9001;
+            fastcgi_read_timeout 900;
+            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+            fastcgi_index index.php;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_param PHP_VALUE "auto_prepend_file=/var/www/tasmoadmin/tasmoadmin/includes/IngressInit.php";
+            fastcgi_param ASSUMED_AUTH 1;
+            include fastcgi_params;
+        }
+
+        location ~ ^(.*)\.(css|js|gif||jpe?g|png|json|cache\.json)$ {
+        }
+
+        rewrite ^%%ingress_entry%%/login$ %%ingress_entry%%/login.php last;
+        rewrite ^%%ingress_entry%%/logout$ %%ingress_entry%%/login.php?logout=logout last;
+        rewrite ^%%ingress_entry%%/doAjaxAll$ %%ingress_entry%%/index.php?doAjaxAll=doAjaxAll last;
+        rewrite ^%%ingress_entry%%/doAjax$ %%ingress_entry%%/index.php?doAjax=doAjax last;
+        rewrite "%%ingress_entry%%/([a-z]{2})/" %%ingress_entry%%/index.php?lang=$1 last;
+        rewrite ^%%ingress_entry%%/([a-zA-Z_]+)/([a-zA-Z_]+)/([0-9_]+)/?$ %%ingress_entry%%/index.php?page=$1&action=$2&device_id=$3;
+        rewrite ^%%ingress_entry%%/([a-zA-Z_]+)/(force)/?$ %%ingress_entry%%/index.php?page=$1&force=1;
+        rewrite ^%%ingress_entry%%/([a-zA-Z_]+)/([a-zA-Z_]+)/?$ %%ingress_entry%%/index.php?page=$1&action=$2;
+        rewrite ^%%ingress_entry%%/([a-zA-Z_]+)/([0-9]+)/?$ %%ingress_entry%%/index.php?page=$1&device_id=$2;
+        rewrite ^%%ingress_entry%%/([a-zA-Z_]+)/?$ %%ingress_entry%%/index.php?page=$1;
+    }
+
+    location / {
+        proxy_pass http://localhost:8099%%ingress_entry%%/;
+    }
+}

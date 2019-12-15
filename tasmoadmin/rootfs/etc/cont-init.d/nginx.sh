@@ -9,12 +9,10 @@ declare keyfile
 bashio::config.require.ssl
 
 if bashio::config.true 'ssl'; then
-    rm /etc/nginx/nginx.conf
-    mv /etc/nginx/nginx-ssl.conf /etc/nginx/nginx.conf
-
     certfile=$(bashio::config 'certfile')
     keyfile=$(bashio::config 'keyfile')
 
-    sed -i "s#%%certfile%%#${certfile}#g" /etc/nginx/nginx.conf
-    sed -i "s#%%keyfile%%#${keyfile}#g" /etc/nginx/nginx.conf
+    sed "s#%%certfile%%#${certfile}#g ; s#%%keyfile%%#${keyfile}#g" /etc/nginx/servers/direct-ssl.disabled > /etc/nginx/servers/direct-ssl.conf
+else
+    cp /etc/nginx/servers/direct.disabled /etc/nginx/servers/direct.conf
 fi

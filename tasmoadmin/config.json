@@ -16,20 +16,23 @@
   "boot": "auto",
   "hassio_api": true,
   "hassio_role": "default",
+  "ingress": true,
+  "ingress_port": 8099,
   "map": [
     "ssl"
   ],
   "ports": {
-    "9541/tcp": 9541
+    "9541/tcp": null
   },
   "ports_description": {
-    "9541/tcp": "TasmoAdmin web interface"
+    "9541/tcp": "TasmoAdmin web interface (Not required for Hass.io Ingress)"
   },
   "options": {
     "ssl": true,
     "certfile": "fullchain.pem",
     "keyfile": "privkey.pem"
   },
+  "panel_icon": "mdi:network",
   "schema": {
     "log_level": "match(^(trace|debug|info|notice|warning|error|fatal)$)?",
     "ssl": "bool",
