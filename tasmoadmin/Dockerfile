@@ -23,7 +23,7 @@ RUN \
     && git clone --branch v1.6.3 --depth=1 \
         https://github.com/reloxx13/TasmoAdmin.git /var/www/tasmoadmin \
     \
-    && apk del --purge .build-dependencies \
+    && apk del --no-cache --purge .build-dependencies \
     \
     && rm -f -r /var/www/tasmoadmin/.git \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
