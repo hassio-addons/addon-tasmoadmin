@@ -53,14 +53,12 @@ comparison to installing any other Hass.io add-on.
 
 Example add-on configuration:
 
-```json
-{
-  "log_level": "info",
-  "ssl": false,
-  "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem",
-  "ipv6": true
-}
+```yaml
+log_level: info
+ssl: false
+certfile: fullchain.pem
+keyfile: privkey.pem
+ipv6: true
 ```
 
 **Note**: _This is just an example, don't copy and past it! Create your own!_
