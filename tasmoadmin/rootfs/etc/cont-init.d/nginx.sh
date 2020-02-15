@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: TasmoAdmin
+# Home Assistant Community Add-on: TasmoAdmin
 # Configures NGINX for use with TasmoAdmin
 # ==============================================================================
 declare certfile

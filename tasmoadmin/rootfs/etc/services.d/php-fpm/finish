@@ -1,6 +1,6 @@
 #!/usr/bin/execlineb -S0
 # ==============================================================================
-# Community Hass.io Add-ons: TasmoAdmin
+# Home Assistant Community Add-on: TasmoAdmin
 # Take down the S6 supervision tree when PHP FPM fails
 # ==============================================================================
 if -n { s6-test $# -ne 0 }

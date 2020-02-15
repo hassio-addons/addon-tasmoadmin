@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 # ==============================================================================
-# Community Hass.io Add-ons: TasmoAdmin
+# Home Assistant Community Add-on: TasmoAdmin
 # Runs the Nginx daemon
 # ==============================================================================
 # Wait for PHP-FPM to become available
