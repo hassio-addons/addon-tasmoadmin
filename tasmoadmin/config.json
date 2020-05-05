@@ -4,7 +4,7 @@
   "slug": "sonweb",
   "description": "Centrally manage all your Sonoff-Tasmota devices",
   "url": "https://github.com/hassio-addons/addon-tasmoadmin",
-  "webui": "[PROTO:ssl]://[HOST]:[PORT:9541]",
+  "webui": "[PROTO:ssl]://[HOST][TASMO_BASEURL]:[PORT:9541]",
   "startup": "system",
   "init": false,
   "arch": ["aarch64", "amd64", "armhf", "armv7", "i386"],
@@ -21,12 +21,14 @@
   "options": {
     "ssl": true,
     "certfile": "fullchain.pem",
-    "keyfile": "privkey.pem"
+    "keyfile": "privkey.pem",
+    "tasmo_baseurl": "/"
   },
   "schema": {
     "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
     "ssl": "bool",
     "certfile": "str",
-    "keyfile": "str"
+    "keyfile": "str",
+    "tasmo_baseurl": "str"
   }
 }
