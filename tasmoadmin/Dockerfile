@@ -9,13 +9,13 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.18.0-r0 \
-        php7-curl=7.3.22-r0 \
-        php7-fpm=7.3.22-r0 \
-        php7-json=7.3.22-r0 \
-        php7-opcache=7.3.22-r00 \
-        php7-session=7.3.22-r0 \
-        php7-zip=7.3.22-r0 \
-        php7=7.3.22-r0 \
+        php7-curl=7.3.23-r0 \
+        php7-fpm=7.3.23-r0 \
+        php7-json=7.3.23-r0 \
+        php7-opcache=7.3.23-r00 \
+        php7-session=7.3.23-r0 \
+        php7-zip=7.3.23-r0 \
+        php7=7.3.23-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         git=2.26.2-r0 \
@@ -26,6 +26,7 @@ RUN \
     && apk del --no-cache --purge .build-dependencies \
     \
     && rm -f -r /var/www/tasmoadmin/.git \
+    && rm -f -r /var/www/tasmoadmin/portable \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name ".gitignore" -depth -exec rm -f {} \; \
