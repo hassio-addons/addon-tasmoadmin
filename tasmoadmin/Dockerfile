@@ -26,6 +26,7 @@ RUN \
     && apk del --no-cache --purge .build-dependencies \
     \
     && rm -f -r /var/www/tasmoadmin/.git \
+    && rm -f -r /var/www/tasmoadmin/portable \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name ".gitignore" -depth -exec rm -f {} \; \
