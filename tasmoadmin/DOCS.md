@@ -31,7 +31,6 @@ log_level: info
 ssl: false
 certfile: fullchain.pem
 keyfile: privkey.pem
-ipv6: true
 ```
 
 **Note**: _This is just an example, don't copy and past it! Create your own!_
@@ -72,10 +71,6 @@ The certificate file to use for SSL.
 The private key file to use for SSL.
 
 **Note**: _The file MUST be stored in `/ssl/`, which is the default_
-
-### Option: `ipv6`
-
-Set this option too `false` to disable IPv6 support.
 
 ## Embedding into Home Assistant
 
