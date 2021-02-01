@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.5
+ARG BUILD_FROM="ghcr.io/hassio-addons/base/amd64:9.1.2"
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -8,17 +8,17 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 # Setup base
 RUN \
     apk add --no-cache \
-        nginx=1.18.0-r1 \
-        php7-curl=7.3.23-r0 \
-        php7-fpm=7.3.23-r0 \
-        php7-json=7.3.23-r0 \
-        php7-opcache=7.3.23-r00 \
-        php7-session=7.3.23-r0 \
-        php7-zip=7.3.23-r0 \
-        php7=7.3.23-r0 \
+        nginx=1.18.0-r13 \
+        php7-curl=7.4.14-r0 \
+        php7-fpm=7.4.14-r0 \
+        php7-json=7.4.14-r0 \
+        php7-opcache=7.4.14-r00 \
+        php7-session=7.4.14-r0 \
+        php7-zip=7.4.14-r0 \
+        php7=7.4.14-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        git=2.26.2-r0 \
+        git=2.30.0-r0 \
     \
     && git clone --branch v1.7.0 --depth=1 \
         https://github.com/reloxx13/TasmoAdmin.git /var/www/tasmoadmin \
