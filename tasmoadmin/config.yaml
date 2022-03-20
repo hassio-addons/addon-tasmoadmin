@@ -18,8 +18,10 @@ map:
   - ssl
 ports:
   9541/tcp: 9541
+  9542/tcp: 9542
 ports_description:
   9541/tcp: TasmoAdmin web interface
+  9542/tcp: TasmoAdmin HTTP OTA download only
 options:
   ssl: true
   certfile: fullchain.pem
