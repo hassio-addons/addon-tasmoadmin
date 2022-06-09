@@ -1,9 +1,9 @@
-#!/usr/bin/with-contenv bashio
+#!/command/with-contenv bashio
 # ==============================================================================
 # Home Assistant Community Add-on: TasmoAdmin
 # Runs the Nginx daemon
 # ==============================================================================
 # Wait for PHP-FPM to become available
 bashio::net.wait_for 9001
-bashio::log.info "Starting NGinx server..."
+bashio::log.info "Starting NGINX server..."
 exec nginx -g "daemon off;"
