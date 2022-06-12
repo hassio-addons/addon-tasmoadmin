@@ -6,26 +6,46 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
+# hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
         nginx=1.22.0-r0 \
-        php8-curl=8.0.19-r1 \
-        php8-fpm=8.0.19-r1 \
-        php8-opcache=8.0.19-r1 \
-        php8-session=8.0.19-r1 \
-        php8-zip=8.0.19-r1 \
-        php8=8.0.19-r1 \
+        php8-curl=8.0.20-r0 \
+        php8-fpm=8.0.20-r0 \
+        php8-opcache=8.0.20-r0 \
+        php8-session=8.0.20-r0 \
+        php8-zip=8.0.20-r0 \
+        php8=8.0.20-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
+        composer=2.3.7-r0 \
         git=2.36.1-r0 \
+        nodejs=16.15.0-r1 \
+        npm=8.10.0-r0 \
     \
-    && git clone --branch v1.8.0 --depth=1 \
-        https://github.com/reloxx13/TasmoAdmin.git /var/www/tasmoadmin \
+    && git clone --branch "v2.0.0-beta6" --depth=1 \
+        "https://github.com/reloxx13/TasmoAdmin.git" /var/www/tasmoadmin \
+    \
+    && cd /var/www/tasmoadmin/tasmoadmin \
+    && composer remove --dev --no-install "phpunit/phpunit" \
+    && composer install --no-dev \
+    \
+    && npm ci \
+    && node minify.js \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
-    && rm -f -r /var/www/tasmoadmin/.git \
-    && rm -f -r /var/www/tasmoadmin/portable \
+    && rm -f -r \
+        /root/.composer \
+        /root/.npm \
+        /var/www/tasmoadmin/.docker \
+        /var/www/tasmoadmin/.git \
+        /var/www/tasmoadmin/.github \
+        /var/www/tasmoadmin/.iocage \
+        /var/www/tasmoadmin/docker-compose.yml \
+        /var/www/tasmoadmin/tasmoadmin/node_modules \
+        /var/www/tasmoadmin/tasmoadmin/tests \
+    \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name ".gitignore" -depth -exec rm -f {} \; \
