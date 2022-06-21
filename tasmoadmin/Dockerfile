@@ -12,6 +12,8 @@ RUN \
         nginx=1.22.0-r0 \
         php8-curl=8.0.20-r0 \
         php8-fpm=8.0.20-r0 \
+        php8-iconv=8.0.20-r0 \
+        php8-mbstring=8.0.20-r0 \
         php8-opcache=8.0.20-r0 \
         php8-session=8.0.20-r0 \
         php8-zip=8.0.20-r0 \
