@@ -23,8 +23,8 @@ RUN \
         nodejs=16.15.0-r1 \
         npm=8.10.0-r0 \
     \
-    && git clone --branch "v2.0.0-beta8" --depth=1 \
-        "https://github.com/reloxx13/TasmoAdmin.git" /var/www/tasmoadmin \
+    && git clone --branch "v2.0.0-beta9" --depth=1 \
+        "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
     \
     && cd /var/www/tasmoadmin/tasmoadmin \
     && composer install --no-dev \
