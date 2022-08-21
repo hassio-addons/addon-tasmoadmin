@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:12.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.3
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,19 +10,19 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.22.0-r1 \
-        php8-curl=8.0.20-r0 \
-        php8-fpm=8.0.20-r0 \
-        php8-iconv=8.0.20-r0 \
-        php8-mbstring=8.0.20-r0 \
-        php8-opcache=8.0.20-r0 \
-        php8-session=8.0.20-r0 \
-        php8-zip=8.0.20-r0 \
-        php8=8.0.20-r0 \
+        php8-curl=8.0.22-r0 \
+        php8-fpm=8.0.22-r0 \
+        php8-iconv=8.0.22-r0 \
+        php8-mbstring=8.0.22-r0 \
+        php8-opcache=8.0.22-r0 \
+        php8-session=8.0.22-r0 \
+        php8-zip=8.0.22-r0 \
+        php8=8.0.22-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.3.7-r0 \
-        git=2.36.1-r0 \
-        nodejs=16.15.0-r1 \
+        composer=2.4.1-r0 \
+        git=2.36.2-r0 \
+        nodejs=16.16.0-r0 \
         npm=8.10.0-r0 \
     \
     && git clone --branch "v2.0.0" --depth=1 \
