@@ -20,7 +20,7 @@ RUN \
         php8=8.0.24-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.4.1-r0 \
+        composer=2.4.2-r0 \
         git=2.36.2-r0 \
         nodejs=16.16.0-r0 \
         npm=8.10.0-r0 \
