@@ -10,14 +10,14 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.22.0-r1 \
-        php8-curl=8.0.22-r0 \
-        php8-fpm=8.0.22-r0 \
-        php8-iconv=8.0.22-r0 \
-        php8-mbstring=8.0.22-r0 \
-        php8-opcache=8.0.22-r0 \
-        php8-session=8.0.22-r0 \
-        php8-zip=8.0.22-r0 \
-        php8=8.0.22-r0 \
+        php8-curl=8.0.24-r0 \
+        php8-fpm=8.0.24-r0 \
+        php8-iconv=8.0.24-r0 \
+        php8-mbstring=8.0.24-r0 \
+        php8-opcache=8.0.24-r0 \
+        php8-session=8.0.24-r0 \
+        php8-zip=8.0.24-r0 \
+        php8=8.0.24-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.4.1-r0 \
