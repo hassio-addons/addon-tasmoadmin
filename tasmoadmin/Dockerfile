@@ -22,7 +22,7 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.4.2-r0 \
         git=2.36.2-r0 \
-        nodejs=16.16.0-r0 \
+        nodejs=16.17.1-r0 \
         npm=8.10.0-r0 \
     \
     && git clone --branch "v2.0.0" --depth=1 \
