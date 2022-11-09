@@ -34,7 +34,7 @@ RUN \
     \
     && npm ci \
     && node minify.js \
-    && NODE_ENV=production npm ci
+    && NODE_ENV=production npm ci \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
