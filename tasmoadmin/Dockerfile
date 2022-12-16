@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:12.2.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.0.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,21 +10,21 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.22.1-r0 \
-        php8-curl=8.0.25-r0 \
-        php8-dom=8.0.25-r0 \
-        php8-fpm=8.0.25-r0 \
-        php8-iconv=8.0.25-r0 \
-        php8-mbstring=8.0.25-r0 \
-        php8-opcache=8.0.25-r0 \
-        php8-session=8.0.25-r0 \
-        php8-zip=8.0.25-r0 \
-        php8=8.0.25-r0 \
+        php81-curl=8.1.13-r0 \
+        php81-dom=8.1.13-r0 \
+        php81-fpm=8.1.13-r0 \
+        php81-iconv=8.1.13-r0 \
+        php81-mbstring=8.1.13-r0 \
+        php81-opcache=8.1.13-r0 \
+        php81-session=8.1.13-r0 \
+        php81-zip=8.1.13-r0 \
+        php81=8.1.13-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.4.2-r0 \
-        git=2.36.3-r0 \
-        nodejs=16.17.1-r0 \
-        npm=8.10.0-r0 \
+        composer=2.4.4-r \
+        git=2.38.2-r0 \
+        nodejs=18.12.1-r0 \
+        npm=9.1.2-r0 \
     \
     && git clone --branch "v2.1.1" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
