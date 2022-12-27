@@ -57,7 +57,7 @@ RUN \
 COPY rootfs /
 
 # Health check
-HEALTHCHECK CMD curl --fail http://127.0.0.1:9541 || exit 1
+HEALTHCHECK CMD [[ "curl --fail http://127.0.0.1:9541" ] || [ "curl --fail --insecure https://127.0.0.1:9541" ]] || exit 1
 
 # Build arguments
 ARG BUILD_ARCH
