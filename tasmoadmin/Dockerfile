@@ -10,15 +10,15 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 RUN \
     apk add --no-cache \
         nginx=1.22.1-r0 \
-        php81-curl=8.1.13-r0 \
-        php81-dom=8.1.13-r0 \
-        php81-fpm=8.1.13-r0 \
-        php81-iconv=8.1.13-r0 \
-        php81-mbstring=8.1.13-r0 \
-        php81-opcache=8.1.13-r0 \
-        php81-session=8.1.13-r0 \
-        php81-zip=8.1.13-r0 \
-        php81=8.1.13-r0 \
+        php81-curl=8.1.14-r0 \
+        php81-dom=8.1.14-r0 \
+        php81-fpm=8.1.14-r0 \
+        php81-iconv=8.1.14-r0 \
+        php81-mbstring=8.1.14-r0 \
+        php81-opcache=8.1.14-r0 \
+        php81-session=8.1.14-r0 \
+        php81-zip=8.1.14-r0 \
+        php81=8.1.14-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.4.4-r \
