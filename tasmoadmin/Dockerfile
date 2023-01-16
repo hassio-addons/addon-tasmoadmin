@@ -26,7 +26,7 @@ RUN \
         nodejs=18.12.1-r0 \
         npm=9.1.2-r0 \
     \
-    && git clone --branch "v2.3.2" --depth=1 \
+    && git clone --branch "v2.3.3" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
     \
     && cd /var/www/tasmoadmin/tasmoadmin \
