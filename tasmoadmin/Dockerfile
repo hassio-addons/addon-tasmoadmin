@@ -22,7 +22,7 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.4.4-r \
-        git=2.38.2-r0 \
+        git=2.38.3-r1 \
         nodejs=18.12.1-r0 \
         npm=9.1.2-r0 \
     \
