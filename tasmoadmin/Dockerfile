@@ -6,6 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
+ARG TASMOADMIN_VERSION="v3.0.1"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
@@ -26,7 +27,7 @@ RUN \
         nodejs=18.14.2-r0 \
         npm=9.1.2-r0 \
     \
-    && git clone --branch "v3.0.1" --depth=1 \
+    && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
     \
     && cd /var/www/tasmoadmin/tasmoadmin \
