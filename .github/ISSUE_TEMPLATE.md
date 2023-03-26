@@ -1,3 +1,14 @@
+<!-- 
+
+This addon wraps the TasmoAdmin application (https://github.com/TasmoAdmin/TasmoAdmin)
+
+For issues/feature requests related to application please report these upstream.
+
+https://github.com/TasmoAdmin/TasmoAdmin/issues/new/choose
+
+For issues/requests related to the addon itself - raise them here :) 
+ 
+-->
 # Problem/Motivation
 
 > (Why the issue was filed)
