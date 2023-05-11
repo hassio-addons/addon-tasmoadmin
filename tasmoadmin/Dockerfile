@@ -24,7 +24,7 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.4.4-r0 \
         git=2.38.5-r0 \
-        nodejs=18.14.2-r0 \
+        nodejs=18.16.0-r0 \
         npm=9.1.2-r0 \
     \
     && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
