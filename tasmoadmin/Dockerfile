@@ -10,22 +10,22 @@ ARG TASMOADMIN_VERSION="v3.0.3"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.22.1-r0 \
-        php81-curl=8.1.18-r0 \
-        php81-dom=8.1.18-r0 \
-        php81-fpm=8.1.18-r0 \
-        php81-iconv=8.1.18-r0 \
-        php81-mbstring=8.1.18-r0 \
-        php81-opcache=8.1.18-r0 \
-        php81-session=8.1.18-r0 \
-        php81-zip=8.1.18-r0 \
-        php81=8.1.18-r0 \
+        nginx=1.24.0-r3 \
+        php81-curl=8.1.19-r2 \
+        php81-dom=8.1.19-r2 \
+        php81-fpm=8.1.19-r2 \
+        php81-iconv=8.1.19-r2 \
+        php81-mbstring=8.1.19-r2 \
+        php81-opcache=8.1.19-r2 \
+        php81-session=8.1.19-r2 \
+        php81-zip=8.1.19-r2 \
+        php81=8.1.19-r2 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.4.4-r0 \
-        git=2.38.5-r0 \
-        nodejs=18.14.2-r0 \
-        npm=9.1.2-r0 \
+        composer=2.5.5-r0 \
+        git=2.40.1-r0 \
+        nodejs=18.16.0-r1 \
+        npm=9.6.6-r0 \
     \
     && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
