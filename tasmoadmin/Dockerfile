@@ -22,7 +22,7 @@ RUN \
         php81=8.1.23-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.6.4-r0 \
+        composer=2.6.5-r0 \
         git=2.40.1-r0 \
         nodejs=18.17.1-r0 \
         npm=9.6.6-r0 \
