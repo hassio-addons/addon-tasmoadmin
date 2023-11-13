@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG TASMOADMIN_VERSION="v3.1.4"
+ARG TASMOADMIN_VERSION="v3.2.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
