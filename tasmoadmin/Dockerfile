@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:14.3.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base-nodejs:0.1.0
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -10,22 +10,20 @@ ARG TASMOADMIN_VERSION="v3.3.2"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.24.0-r7 \
-        php81-curl=8.1.26-r0 \
-        php81-dom=8.1.26-r0 \
-        php81-fpm=8.1.26-r0 \
-        php81-iconv=8.1.26-r0 \
-        php81-mbstring=8.1.26-r0 \
-        php81-opcache=8.1.26-r0 \
-        php81-session=8.1.26-r0 \
-        php81-zip=8.1.26-r0 \
-        php81=8.1.26-r0 \
+        nginx=1.24.0-r14 \
+        php82-curl=8.2.14-r0 \
+        php82-dom=8.2.14-r0 \
+        php82-fpm=8.2.14-r0 \
+        php82-iconv=8.2.14-r0 \
+        php82-mbstring=8.2.14-r0 \
+        php82-opcache=8.2.14-r0 \
+        php82-session=8.2.14-r0 \
+        php82-zip=8.2.14-r0 \
+        php82=8.2.14-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.6.5-r0 \
-        git=2.40.1-r0 \
-        nodejs=18.18.2-r0 \
-        npm=9.6.6-r0 \
+        composer=2.6.6-r0 \
+        git=2.43.0-r0 \
     \
     && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
