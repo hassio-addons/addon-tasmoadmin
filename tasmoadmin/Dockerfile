@@ -1,12 +1,33 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base-nodejs:0.1.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.6
+ARG BUILDER=ghcr.io/hassio-addons/base-nodejs:0.1.3
+
+# hadolint ignore=DL3006
+FROM ${BUILDER} AS builder
+
+# Setup base
+ARG TASMOADMIN_VERSION="v3.3.3"
+
+# hadolint ignore=DL3003
+RUN \
+    apk add --no-cache \
+        git=2.43.0-r0 \
+    \
+    && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
+        "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
+    \
+    && cd /var/www/tasmoadmin/tasmoadmin \
+    && npm ci \
+    && node minify.js \
+    && NODE_ENV=production npm ci
+
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Setup base
-ARG TASMOADMIN_VERSION="v3.3.3"
+COPY --from=builder /var/www/tasmoadmin/tasmoadmin /var/www/tasmoadmin/tasmoadmin
+
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
@@ -23,17 +44,9 @@ RUN \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.6.6-r0 \
-        git=2.43.0-r0 \
-    \
-    && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
-        "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
     \
     && cd /var/www/tasmoadmin/tasmoadmin \
     && composer install --no-dev \
-    \
-    && npm ci \
-    && node minify.js \
-    && NODE_ENV=production npm ci \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
