@@ -6,7 +6,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG TASMOADMIN_VERSION="v3.3.3"
+ARG TASMOADMIN_VERSION="v4.0.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
@@ -32,8 +32,8 @@ RUN \
     && composer install --no-dev \
     \
     && npm ci \
-    && node minify.js \
-    && NODE_ENV=production npm ci \
+    && npm run build \
+    && rm -rf node_modules \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
