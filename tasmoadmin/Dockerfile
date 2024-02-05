@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base-nodejs:0.1.3
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.6
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
 
@@ -24,6 +24,8 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.6.6-r0 \
         git=2.43.0-r0 \
+        nodejs=20.11.0-r0 \
+        npm=10.2.5-r0 \
     \
     && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
         "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
