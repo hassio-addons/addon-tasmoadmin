@@ -33,7 +33,6 @@ RUN \
     \
     && npm ci \
     && npm run build \
-    && rm -rf node_modules \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
@@ -45,6 +44,7 @@ RUN \
         /var/www/tasmoadmin/.github \
         /var/www/tasmoadmin/.iocage \
         /var/www/tasmoadmin/docker-compose.yml \
+        /var/www/tasmoadmin/node_modules \
         /var/www/tasmoadmin/tasmoadmin/tests \
     \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
