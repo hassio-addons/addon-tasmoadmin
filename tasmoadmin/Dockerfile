@@ -22,7 +22,7 @@ RUN \
         php82=8.2.15-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.6.6-r0 \
+        composer=2.7.0-r0 \
         git=2.43.0-r0 \
     \
     && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
