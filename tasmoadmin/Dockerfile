@@ -43,7 +43,7 @@ RUN \
         php82=8.2.15-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.7.0-r0 \
+        composer=2.7.1-r0 \
     \
     && cd /var/www/tasmoadmin/tasmoadmin \
     && composer install --no-dev \
