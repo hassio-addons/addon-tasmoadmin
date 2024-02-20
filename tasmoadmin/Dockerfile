@@ -5,7 +5,7 @@ ARG BUILDER=ghcr.io/hassio-addons/base-nodejs:0.1.3
 FROM ${BUILDER} AS builder
 
 # Setup base
-ARG TASMOADMIN_VERSION="v4.0.0"
+ARG TASMOADMIN_VERSION="v4.0.1"
 
 # hadolint ignore=DL3003
 RUN \
