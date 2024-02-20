@@ -10,7 +10,7 @@ if ! bashio::fs.directory_exists "/data/tasmoadmin"; then
     bashio::log.debug 'Data directory not initialized, doing that now...'
 
     # Setup structure
-    cp -R /var/www/tasmoadmin/tasmoadmin/data /data/tasmoadmin
+    cp -R /var/www/tasmoadmin/data /data/tasmoadmin
 
     # Ensure file permissions
     chown -R nginx:nginx /data/tasmoadmin
@@ -19,5 +19,5 @@ if ! bashio::fs.directory_exists "/data/tasmoadmin"; then
 fi
 
 bashio::log.debug 'Symlinking data directory to persistent storage location...'
-rm -f -r /var/www/tasmoadmin/tasmoadmin/data
-ln -s /data/tasmoadmin /var/www/tasmoadmin/tasmoadmin/data
+rm -f -r /var/www/tasmoadmin/data
+ln -s /data/tasmoadmin /var/www/tasmoadmin/data
