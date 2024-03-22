@@ -33,8 +33,8 @@ RUN \
         /var/www/tasmoadmin --strip-components=1 \
     \
     && cd /var/www/tasmoadmin \
-    && rm -r vendor && \ 
-        composer install --no-dev --optimize-autoloader \
+    && rm -r vendor \
+    && composer install --no-dev --optimize-autoloader \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
