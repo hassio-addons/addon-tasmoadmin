@@ -1,24 +1,4 @@
 ARG BUILD_FROM=ghcr.io/hassio-addons/base:15.0.6
-ARG BUILDER=ghcr.io/hassio-addons/base-nodejs:0.1.3
-
-# hadolint ignore=DL3006
-FROM ${BUILDER} AS builder
-
-# Setup base
-ARG TASMOADMIN_VERSION="v3.3.3"
-
-# hadolint ignore=DL3003
-RUN \
-    apk add --no-cache \
-        git=2.43.0-r0 \
-    \
-    && git clone --branch "${TASMOADMIN_VERSION}" --depth=1 \
-        "https://github.com/TasmoAdmin/TasmoAdmin.git" /var/www/tasmoadmin \
-    \
-    && cd /var/www/tasmoadmin/tasmoadmin \
-    && npm ci \
-    && node minify.js \
-    && NODE_ENV=production npm ci
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -26,7 +6,8 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-COPY --from=builder /var/www/tasmoadmin/tasmoadmin /var/www/tasmoadmin/tasmoadmin
+# Setup base
+ARG TASMOADMIN_VERSION="v3.3.3"
 
 # hadolint ignore=DL3003
 RUN \
@@ -45,20 +26,21 @@ RUN \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.7.1-r0 \
     \
-    && cd /var/www/tasmoadmin/tasmoadmin \
-    && composer install --no-dev \
+    && curl -J -L -o /tmp/tasmoadmin.tar.gz \
+        "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
+    && mkdir -p /var/www/tasmoadmin \
+    && tar zxf /tmp/tasmoadmin.tar.gz -C \
+        /var/www/tasmoadmin --strip-components=1 \
+    \
+    && cd /var/www/tasmoadmin \
+    && rm -r vendor \
+    && composer install --no-dev --optimize-autoloader \
     \
     && apk del --no-cache --purge .build-dependencies \
     \
     && rm -f -r \
         /root/.composer \
-        /root/.npm \
-        /var/www/tasmoadmin/.docker \
-        /var/www/tasmoadmin/.git \
-        /var/www/tasmoadmin/.github \
-        /var/www/tasmoadmin/.iocage \
-        /var/www/tasmoadmin/docker-compose.yml \
-        /var/www/tasmoadmin/tasmoadmin/tests \
+        /var/www/tasmoadmin/tests \
     \
     && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
     && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
