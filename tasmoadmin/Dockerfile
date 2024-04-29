@@ -12,7 +12,7 @@ ARG TASMOADMIN_VERSION="v4.0.2"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.24.0-r15 \
+        nginx=1.24.0-r16 \
         php82-curl=8.2.18-r0 \
         php82-dom=8.2.18-r0 \
         php82-fpm=8.2.18-r0 \
