@@ -12,16 +12,16 @@ ARG TASMOADMIN_VERSION="v4.1.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.24.0-r16 \
-        php82-curl=8.2.19-r0 \
-        php82-dom=8.2.19-r0 \
-        php82-fpm=8.2.19-r0 \
-        php82-iconv=8.2.19-r0 \
-        php82-mbstring=8.2.19-r0 \
-        php82-opcache=8.2.19-r0 \
-        php82-session=8.2.19-r0 \
-        php82-zip=8.2.19-r0 \
-        php82=8.2.19-r0 \
+        nginx=1.26.0-r1 \
+        php83-curl=8.3.7-r0 \
+        php83-dom=8.3.7-r0 \
+        php83-fpm=8.3.7-r0 \
+        php83-iconv=8.3.7-r0 \
+        php83-mbstring=8.3.7-r0 \
+        php83-opcache=8.3.7-r0 \
+        php83-session=8.3.7-r0 \
+        php83-zip=8.3.7-r0 \
+        php83=8.3.7-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.7.6-r0 \
