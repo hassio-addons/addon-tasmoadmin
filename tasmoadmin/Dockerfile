@@ -24,7 +24,7 @@ RUN \
         php83=8.3.8-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.7.6-r0 \
+        composer=2.7.7-r0 \
     \
     && curl -J -L -o /tmp/tasmoadmin.tar.gz \
         "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
