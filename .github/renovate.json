@@ -5,8 +5,9 @@
   "labels": ["dependencies", "no-stale"],
   "commitMessagePrefix": "⬆️",
   "commitMessageTopic": "{{depName}}",
-  "regexManagers": [
+  "customManagers": [
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$", "/build.yaml$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -17,6 +18,7 @@
       "datasourceTemplate": "docker"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStringsStrategy": "any",
       "matchStrings": [
@@ -27,6 +29,7 @@
       "depNameTemplate": "alpine_3_20/{{package}}"
     },
     {
+      "customType": "regex",
       "fileMatch": ["/Dockerfile$"],
       "matchStrings": [
         "ARG TASMOADMIN_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
@@ -43,8 +46,8 @@
     {
       "groupName": "PHP",
       "matchDatasources": ["repology"],
-      "matchDepPatterns": ["alpine.*/php.*"],
-      "automerge": true
+      "automerge": true,
+      "matchDepNames": ["/alpine.*/php.*/"]
     },
     {
       "groupName": "Add-on base image",
