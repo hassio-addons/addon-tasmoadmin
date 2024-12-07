@@ -12,7 +12,7 @@ ARG TASMOADMIN_VERSION="v4.2.0"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.26.2-r0 \
+        nginx=1.26.2-r3 \
         php83-curl=8.3.14-r0 \
         php83-dom=8.3.14-r0 \
         php83-fpm=8.3.14-r0 \
@@ -24,7 +24,7 @@ RUN \
         php83=8.3.14-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.8.2-r0 \
+        composer=2.8.3-r1 \
     \
     && curl -J -L -o /tmp/tasmoadmin.tar.gz \
         "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
