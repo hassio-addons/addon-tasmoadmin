@@ -7,7 +7,7 @@ FROM ${BUILD_FROM}
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG TASMOADMIN_VERSION="v4.2.1"
+ARG TASMOADMIN_VERSION="v4.2.2"
 
 # hadolint ignore=DL3003
 RUN \
