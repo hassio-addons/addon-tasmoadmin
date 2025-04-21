@@ -36,6 +36,15 @@
       ],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "TasmoAdmin/TasmoAdmin"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": ["/Dockerfile$"],
+      "matchStrings": [
+        "ARG COMPOSER_VERSION=[\"']?(?<currentValue>.+?)[\"']?\\s+"
+      ],
+      "datasourceTemplate": "docker",
+      "depNameTemplate": "composer"
     }
   ],
   "packageRules": [
