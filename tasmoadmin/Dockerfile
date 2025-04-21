@@ -12,7 +12,11 @@ RUN curl -J -L -o /tmp/tasmoadmin.tar.gz \
         && tar zxf /tmp/tasmoadmin.tar.gz -C \
             /var/www/tasmoadmin --strip-components=1 \
         && cd /var/www/tasmoadmin \
-        && composer install --no-dev --optimize-autoloader
+        && composer install --no-dev --optimize-autoloader \
+        && find . -type f -name ".htaccess" -depth -exec rm -f {} \; \
+        && find . -type f -name "*.md" -depth -exec rm -f {} \; \
+        && find . -type f -name ".gitignore" -depth -exec rm -f {} \; \
+        && find . -type f -name ".empty" -depth -exec rm -f {} \;
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -35,13 +39,7 @@ RUN \
         php84-opcache=8.4.5-r0 \
         php84-session=8.4.5-r0 \
         php84-zip=8.4.5-r0 \
-        php84=8.4.5-r0 \
-    \
-    && cd /var/www/tasmoadmin \
-    && find /var/www/tasmoadmin -type f -name ".htaccess" -depth -exec rm -f {} \; \
-    && find /var/www/tasmoadmin -type f -name "*.md" -depth -exec rm -f {} \; \
-    && find /var/www/tasmoadmin -type f -name ".gitignore" -depth -exec rm -f {} \; \
-    && find /var/www/tasmoadmin -type f -name ".empty" -depth -exec rm -f {} \;
+        php84=8.4.5-r0
 
 # Copy root filesystem
 COPY rootfs /
