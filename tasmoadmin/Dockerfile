@@ -6,18 +6,20 @@ FROM composer:${COMPOSER_VERSION} AS builder
 
 ARG TASMOADMIN_VERSION="v4.2.3"
 
-RUN curl -J -L -o /tmp/tasmoadmin.tar.gz \
-        "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
-        && mkdir -p /var/www/tasmoadmin \
-        && tar zxf /tmp/tasmoadmin.tar.gz -C \
-            /var/www/tasmoadmin --strip-components=1 \
-        && cd /var/www/tasmoadmin \
-        && composer install --no-dev --optimize-autoloader \
-        && rm -r tests \
-        && find . -type f -name ".htaccess" -depth -exec rm -f {} \; \
-        && find . -type f -name "*.md" -depth -exec rm -f {} \; \
-        && find . -type f -name ".gitignore" -depth -exec rm -f {} \; \
-        && find . -type f -name ".empty" -depth -exec rm -f {} \;
+# hadolint ignore=DL3003
+RUN \
+    curl -J -L -o /tmp/tasmoadmin.tar.gz \
+    "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
+    && mkdir -p /var/www/tasmoadmin \
+    && tar zxf /tmp/tasmoadmin.tar.gz -C \
+        /var/www/tasmoadmin --strip-components=1 \
+    && cd /var/www/tasmoadmin \
+    && composer install --no-dev --optimize-autoloader \
+    && rm -r tests \
+    && find . -type f -name ".htaccess" -depth -exec rm -f {} \; \
+    && find . -type f -name "*.md" -depth -exec rm -f {} \; \
+    && find . -type f -name ".gitignore" -depth -exec rm -f {} \; \
+    && find . -type f -name ".empty" -depth -exec rm -f {} \;
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -25,10 +27,9 @@ FROM ${BUILD_FROM}
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-# Setup base
+# Copy app from builder
 COPY --from=builder /var/www/tasmoadmin /var/www/tasmoadmin
 
-# hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
         nginx=1.26.3-r0 \
