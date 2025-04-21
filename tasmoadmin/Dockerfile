@@ -13,6 +13,7 @@ RUN curl -J -L -o /tmp/tasmoadmin.tar.gz \
             /var/www/tasmoadmin --strip-components=1 \
         && cd /var/www/tasmoadmin \
         && composer install --no-dev --optimize-autoloader \
+        && rm -r tests \
         && find . -type f -name ".htaccess" -depth -exec rm -f {} \; \
         && find . -type f -name "*.md" -depth -exec rm -f {} \; \
         && find . -type f -name ".gitignore" -depth -exec rm -f {} \; \
