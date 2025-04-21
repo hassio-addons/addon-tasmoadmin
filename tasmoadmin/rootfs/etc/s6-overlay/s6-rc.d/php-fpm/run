@@ -5,4 +5,4 @@
 # Runs the PHP-FPM daemon
 # ==============================================================================
 bashio::log.info "Starting PHP-FPM server..."
-exec php-fpm83 -R --nodaemonize
+exec php-fpm84 -R --nodaemonize
