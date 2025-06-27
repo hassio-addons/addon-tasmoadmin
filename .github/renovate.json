@@ -26,7 +26,7 @@
       ],
       "versioningTemplate": "loose",
       "datasourceTemplate": "repology",
-      "depNameTemplate": "alpine_3_21/{{package}}"
+      "depNameTemplate": "alpine_3_22/{{package}}"
     },
     {
       "customType": "regex",
