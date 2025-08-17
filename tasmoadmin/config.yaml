@@ -6,6 +6,7 @@ description: Centrally manage all your Sonoff-Tasmota devices
 url: https://github.com/hassio-addons/addon-tasmoadmin
 codenotary: codenotary@frenck.dev
 webui: "[PROTO:ssl]://[HOST]:[PORT:9541]"
+ingress: true
 startup: system
 init: false
 arch:
