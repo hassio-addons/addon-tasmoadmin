@@ -1,0 +1,15 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Grocy
+# Configures PHP-FPM for use with Grocy
+# ==============================================================================
+
+# Generate Ingress configuration
+bashio::var.json \
+    name "ingress" \
+    port "^9001" \
+    base "$(bashio::addon.ingress_entry)" \
+    | tempio \
+        -template /etc/php82/templates/php-fpm.gtpl \
+        -out /etc/php82/php-fpm.d/www.conf
