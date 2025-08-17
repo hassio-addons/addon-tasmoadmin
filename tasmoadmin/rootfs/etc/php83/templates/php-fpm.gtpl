@@ -10,5 +10,5 @@ pm.max_spare_servers = 5
 pm.max_requests = 1024
 clear_env = yes
 {{ if .base }}
-env[TASMO_BASEURL] = '{{ .base }}'
+env[TASMO_BASEURL] = '{{ .base }}/'
 {{ end }}
