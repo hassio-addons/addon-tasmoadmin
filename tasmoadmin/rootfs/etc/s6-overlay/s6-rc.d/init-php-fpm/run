@@ -7,8 +7,6 @@
 
 # Generate Ingress configuration
 bashio::var.json \
-    name "ingress" \
-    port "^9001" \
     base "$(bashio::addon.ingress_entry)" \
     | tempio \
         -template /etc/php83/templates/php-fpm.gtpl \
