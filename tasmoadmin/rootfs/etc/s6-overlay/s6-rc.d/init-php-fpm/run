@@ -1,8 +1,8 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: Grocy
-# Configures PHP-FPM for use with Grocy
+# Home Assistant Community Add-on: TasmoAdmin
+# Configures PHP-FPM for use with TasmoAdmin
 # ==============================================================================
 
 # Generate Ingress configuration
