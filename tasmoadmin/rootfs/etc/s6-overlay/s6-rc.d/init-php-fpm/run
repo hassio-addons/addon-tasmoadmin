@@ -1,0 +1,13 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: TasmoAdmin
+# Configures PHP-FPM for use with TasmoAdmin
+# ==============================================================================
+
+# Generate Ingress configuration
+bashio::var.json \
+    base "$(bashio::addon.ingress_entry)" \
+    | tempio \
+        -template /etc/php83/templates/php-fpm.gtpl \
+        -out /etc/php83/php-fpm.d/www.conf
