@@ -9,6 +9,7 @@ ingress: true
 ingress_port: 9541
 ingress_stream: true
 startup: system
+panel_icon: mdi:wrench
 init: false
 arch:
   - aarch64
