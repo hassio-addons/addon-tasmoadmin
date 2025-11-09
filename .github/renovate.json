@@ -13,7 +13,7 @@
       "matchStrings": [
         "ARG BUILD_FROM=(?<depName>.*?):(?<currentValue>.*?)\\s+",
         "ARG BUILDER=(?<depName>.*?):(?<currentValue>.*?)\\s+",
-        "(aarch64|amd64|armhf|armv7|i386):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
+        "(aarch64|amd64):\\s[\"']?(?<depName>.*?):(?<currentValue>.*?)[\"']?\\s"
       ],
       "datasourceTemplate": "docker"
     },
