@@ -1,4 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:19.0.0
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:21.0.2
 
 # hadolint ignore=DL3006
 FROM ${BUILD_FROM}
@@ -12,19 +12,18 @@ ARG TASMOADMIN_VERSION="v4.3.4"
 # hadolint ignore=DL3003
 RUN \
     apk add --no-cache \
-        nginx=1.28.2-r0 \
-        php83-curl=8.3.29-r0 \
-        php83-dom=8.3.29-r0 \
-        php83-fpm=8.3.29-r0 \
-        php83-iconv=8.3.29-r0 \
-        php83-mbstring=8.3.29-r0 \
-        php83-opcache=8.3.29-r0 \
-        php83-session=8.3.29-r0 \
-        php83-zip=8.3.29-r0 \
-        php83=8.3.29-r0 \
+        nginx=1.30.4-r1 \
+        php85-curl=8.5.9-r0 \
+        php85-dom=8.5.9-r0 \
+        php85-fpm=8.5.9-r0 \
+        php85-iconv=8.5.9-r0 \
+        php85-mbstring=8.5.9-r0 \
+        php85-session=8.5.9-r0 \
+        php85-zip=8.5.9-r0 \
+        php85=8.5.9-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
-        composer=2.8.10-r0 \
+        composer=2.10.2-r0 \
     \
     && curl -J -L -o /tmp/tasmoadmin.tar.gz \
         "https://github.com/TasmoAdmin/TasmoAdmin/releases/download/${TASMOADMIN_VERSION}/tasmoadmin_${TASMOADMIN_VERSION}.tar.gz" \
