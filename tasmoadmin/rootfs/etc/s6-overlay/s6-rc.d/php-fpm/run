@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: TasmoAdmin
+# Home Assistant Community App: TasmoAdmin
 # Runs the PHP-FPM daemon
 # ==============================================================================
 bashio::log.info "Starting PHP-FPM server..."
