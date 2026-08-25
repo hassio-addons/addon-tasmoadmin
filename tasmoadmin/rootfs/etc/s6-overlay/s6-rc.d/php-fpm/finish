@@ -1,7 +1,7 @@
 #!/command/with-contenv bashio
 # shellcheck shell=bash
 # ==============================================================================
-# Home Assistant Community Add-on: TasmoAdmin
+# Home Assistant Community App: TasmoAdmin
 # Take down the S6 supervision tree when PHP FPM fails
 # ==============================================================================
 declare exit_code_container
