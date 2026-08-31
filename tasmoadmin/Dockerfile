@@ -13,14 +13,14 @@ ARG TASMOADMIN_VERSION="v5.0.0"
 RUN \
     apk add --no-cache \
         nginx=1.30.4-r1 \
-        php85-curl=8.5.9-r0 \
-        php85-dom=8.5.9-r0 \
-        php85-fpm=8.5.9-r0 \
-        php85-iconv=8.5.9-r0 \
-        php85-mbstring=8.5.9-r0 \
-        php85-session=8.5.9-r0 \
-        php85-zip=8.5.9-r0 \
-        php85=8.5.9-r0 \
+        php85-curl=8.5.10-r0 \
+        php85-dom=8.5.10-r0 \
+        php85-fpm=8.5.10-r0 \
+        php85-iconv=8.5.10-r0 \
+        php85-mbstring=8.5.10-r0 \
+        php85-session=8.5.10-r0 \
+        php85-zip=8.5.10-r0 \
+        php85=8.5.10-r0 \
     \
     && apk add --no-cache --virtual .build-dependencies \
         composer=2.10.2-r0 \
